@@ -765,7 +765,7 @@ func getRestClientFromUnstructured(manifest *yaml.Manifest, provider *KubeProvid
 		return ch
 	}
 
-	timeout := time.NewTimer(60 * time.Second)
+	timeout := time.NewTimer(120 * time.Second)
 	defer timeout.Stop()
 	select {
 	case res := <-discoveryWithTimeout(manifest, provider):
